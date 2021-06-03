@@ -56,8 +56,8 @@ app.get("/restaurants/:id/edit", async (req, res) => {
 
 app.put("/restaurants/:id", async (req, res) => {
   const { id } = req.params;
-  const restaurant = Restaurant.findByIdAndUpdate(id, {
-    ...req.body.campground,
+  const restaurant = await Restaurant.findByIdAndUpdate(id, {
+    ...req.body.restaurant,
   });
   res.redirect(`/restaurants/${restaurant._id}`);
 });
