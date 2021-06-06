@@ -10,7 +10,14 @@
     <h2><%=restaurant.title%></h2>
     <h3><%=restaurant.location%></h3>
 
-    <a href="./<%= restaurant._id %>/edit">Edit </a>
+    <p><a href="./<%= restaurant._id %>/edit">Edit </a></p>
+    <p>
+      <form action="/restaurants/<%= restaurant._id%>?_method=DELETE" method="POST">
+        <button>
+          Delete
+        </button>
+      </form>
+    </p>
 
     <footer>
       <a href="/restaurants">All restaurants</a>
